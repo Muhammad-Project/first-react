@@ -26,12 +26,27 @@
 
         const root = document.querySelector('#root');
 
-        const element = React.createElement('h1', {
-            children: 'Hello From React!',
-            className: 'heading-1',
-        });
+        const p1 = React.createElement('p', {
+            children: "Hello ini paragraph 1",
+        })
 
-        ReactDOM.render(element, root);
+        const p2 = React.createElement('p', {
+            children: "Hello ini paragraph 2",
+        })
+
+        /**
+        const element = React.createElement('div', {
+            children: [p1, p2] // bisa juga digunakan untuk array
+        }) **/
+
+        // Digunakan untuk render element side by side, tanpa menambahkan DOM node lagi
+        const element = React.createElement(React.Fragment, {
+            children: [p1, p2]
+        })
+
+        console.log(element)
+
+        ReactDOM.render(element, root)
     </script>
 </body>
 </html>
