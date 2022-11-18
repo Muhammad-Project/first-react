@@ -7,11 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="root">
+    <div id="root"></div>
 
-    </div>
-
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    
+    
     <script>
+        /** 
         const root = document.querySelector('#root');
 
         const element = document.createElement('h1');
@@ -19,6 +22,16 @@
         element.className = 'heading-1';
 
         root.appendChild(element);
+        **/
+
+        const root = document.querySelector('#root');
+
+        const element = React.createElement('h1', {
+            children: 'Hello From React!',
+            className: 'heading-1',
+        });
+
+        ReactDOM.render(element, root);
     </script>
 </body>
 </html>
