@@ -26,23 +26,15 @@
 
         const root = document.querySelector('#root');
 
-        const p1 = React.createElement('p', {
-            children: "Hello ini paragraph 1",
-        })
-
-        const p2 = React.createElement('p', {
-            children: "Hello ini paragraph 2",
-        })
-
-        /**
-        const element = React.createElement('div', {
-            children: [p1, p2] // bisa juga digunakan untuk array
-        }) **/
-
-        // Digunakan untuk render element side by side, tanpa menambahkan DOM node lagi
-        const element = React.createElement(React.Fragment, {
-            children: [p1, p2]
-        })
+        // Nested Element
+        const element = React.createElement(
+            'ul', 
+            { className: 'list' },
+            // Parameter children dapat ditulis di parameter ke-3 dan seterusnya
+            React.createElement('li', null, 'Apple'),
+            React.createElement('li', null, 'Banana'),
+            React.createElement('li', null, 'Grape'),
+        )
 
         console.log(element)
 
